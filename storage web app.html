@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage App</title>
+</head>
+<style>
+    body{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        padding: 0;
+        text-align: center;
+    }
+
+    h1{
+        color: #333;
+        text-align: right;
+        margin-right: 50px;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+    }
+
+    h2{
+        color: #333;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+    }
+
+    p.text{
+        color: #333;
+        text-align: right;
+        margin-right: 50px;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+    }
+
+    .TopBox{
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 15px;
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        box-shadow: 0px 4px 15px rgb(255,255,255,0.1);
+        padding: 20px;
+        margin: 50px;
+    }
+
+    .CardBox{
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 15px;
+        margin: 15px;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0px 4px 15px rgb(255,255,255,0.1);
+        overflow: hidden;
+        width: 45%;
+        transition: all 0.3s;
+    }
+    
+    button{
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        color: #333;
+        font-size: 30px;
+        width: 100px;
+        padding: 5px;
+        border-radius: 15px;
+        cursor: pointer;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        transition: 0.3s;
+        margin: 15px;
+        border: 1px solid rgb(255, 255,255,0.25);
+        box-shadow: 0 4px 15px rgb(0, 0, 0,0.1);
+        font-weight: bold;
+    }
+
+    #product-list{
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        text-align: right;
+        margin: 25px;
+        padding: 25px;
+        list-style-type: none;
+        text-align: center;
+        border-radius: 15px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 25px;
+        color: #333;
+        border: 1px solid rgb(255, 255,255,0.25);
+        box-shadow: 0 4px 15px rgb(0, 0, 0,0.1);
+        font-weight: bold;
+
+    }
+
+    #product-list:hover{
+        border: 1px solid rgba(39, 37, 37, 0.25);
+    }
+
+    input{
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        width: 250px;
+        padding: 15px;
+        border-radius: 15px;
+        font-size: 15px;
+        outline: none;
+        transition: 3s;
+        border: 1px solid rgb(255, 255,255,0.25);
+        box-shadow: 0 4px 15px rgb(0, 0, 0,0.1);
+    }
+
+    input:hover{
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(39, 37, 37, 0.25);
+    }
+
+    button:hover{
+        transform: translateY(-4px);
+        background-color: rgb(255, 255, 255,0.35);
+        border: 1px solid rgba(39, 37, 37, 0.25);
+    }
+    
+    .CardBox:hover{
+        transform: translateY(-4px);
+        border: 1px solid rgba(39, 37, 37, 0.25);
+    }
+
+
+</style>
+<body>
+
+    <h1>انبارداری وب</h1>
+    <p class="text">برای ذخیره محصول ابتدا نام و قیمت آن را وارد نمایید سپس بر روی گزینه ذخیره ضربه بزنید</p>
+
+    <div class="TopBox">
+        <div class="CardBox">
+            <h2>قیمت محصول</h2>
+            <input id="price-input" type="text" placeholder="قیمت کالا"/>
+        </div>
+        <div class="CardBox">
+            <h2>محصول</h2>
+            <input id="name-input" type="text" placeholder="نام کالا"/>
+        </div>
+        <button class="button" id="save-btn">ذخیره</button>
+    </div>
+
+    <ul id="product-list"></ul>
+
+    <script>
+        const priceInput = document.getElementById('price-input');
+        const nameInput  = document.getElementById('name-input');
+        const saveBtn    = document.getElementById('save-btn');
+        const list       = document.getElementById('product-list');
+
+        const products = JSON.parse(localStorage.getItem('products')) || [];
+
+        renderList();
+
+        saveBtn.addEventListener('click', function () {
+            const name  = nameInput.value.trim();
+            const price = priceInput.value.trim();
+
+            if (!name || !price) {
+                return;
+            }
+
+            products.push({ name, price });
+
+            localStorage.setItem('products', JSON.stringify(products));
+
+            nameInput.value = '';
+            priceInput.value = '';
+
+            renderList();
+        });
+
+        function renderList() {
+            list.innerHTML = '';
+            products.forEach(p => {
+                const li = document.createElement('li');
+                li.textContent = p.name + ' - ' + p.price;
+                list.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
