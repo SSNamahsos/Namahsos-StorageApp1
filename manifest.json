@@ -9,5 +9,9 @@
   "start_url": "/",
   "theme_color": "#c3eef8",
   "id": "MihaniStorage",
-  "description": "A local storage app for saving product names and prices. All data is stored privately on your device without any server required. Works offline."
+  "description": "A local storage app for saving product names and prices. All data is stored privately on your device without any server required. Works offline.",
+  "categories": [
+    "business",
+    "utilities"
+  ]
 }
