@@ -1,230 +1,399 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Storage Mihani</title>
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#c3cfe2">
-    
-    <link rel="apple-touch-icon" sizes="57x57" -57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" -60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" -72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" -76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" -114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" -120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" -144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" -152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" -180x180.png">
-    
-    <link rel="icon" type="image/png" sizes="192x192" -192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" -32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" -96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" -16x16.png">
-    
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
-</head>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Storage Mihani</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#c3cfe2">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+
+  <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32"  href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96"  href="favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16"  href="favicon-16x16.png">
+
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+
+  <style>
     body{
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        padding: 0;
-        text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      padding: 0;
+      text-align: center;
+      direction: rtl;
     }
 
     h1{
-        color: #333;
-        text-align: right;
-        margin-right: 50px;
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+      color: #333;
+      text-align: right;
+      margin-right: 50px;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
     }
 
     h2{
-        color: #333;
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+      color: #333;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
     }
 
     p.text{
-        color: #333;
-        text-align: right;
-        margin-right: 50px;
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+      color: #333;
+      text-align: right;
+      margin-right: 50px;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
     }
 
     .TopBox{
-        background: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        border-radius: 15px;
-        justify-content: center;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        box-shadow: 0 4px 15px rgb(0, 0, 0,0.1);
-        padding: 20px;
-        margin: 50px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      box-shadow: 0 4px 15px rgb(0, 0, 0,0.1);
+      padding: 20px;
+      margin: 20px;
+      justify-content: center;
     }
 
     .CardBox{
-        background: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        padding: 15px;
-        margin: 15px;
-        border-radius: 15px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 4px 15px rgb(0, 0, 0,0.1);
-        overflow: hidden;
-        width: 450px;
-        height: 150px;
-        transition: all 0.3s;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 15px;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 15px rgb(0, 0, 0,0.1);
+      overflow: hidden;
+      flex: 1 1 220px;   /* ریسپانسیو با فلکس */
+      max-width: 260px;
+      box-sizing: border-box;
+      transition: all 0.3s;
     }
-    
+
     button{
-        background: rgba(255, 255, 255, 0.25);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        color: #333;
-        font-size: 30px;
-        width: 100px;
-        padding: 5px;
-        border-radius: 15px;
-        cursor: pointer;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        transition: 0.3s;
-        margin: 15px;
-        border: 1px solid rgb(255, 255,255,0.25);
-        box-shadow: 0 4px 15px rgb(0, 0, 0,0.1);
-        font-weight: bold;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #333;
+      font-size: 18px;
+      padding: 8px 15px;
+      border-radius: 15px;
+      cursor: pointer;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: 0.3s;
+      margin: 10px;
+      border: 1px solid rgb(255, 255,255,0.25);
+      box-shadow: 0 4px 15px rgb(0, 0, 0,0.1);
+      font-weight: bold;
     }
 
     #product-list{
-        background: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        text-align: right;
-        margin: 25px;
-        padding: 25px;
-        list-style-type: none;
-        text-align: center;
-        border-radius: 15px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 25px;
-        color: #333;
-        border: 1px solid rgb(255, 255,255,0.25);
-        box-shadow: 0 4px 15px rgb(0, 0, 0,0.1);
-        font-weight: bold;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      margin: 25px;
+      padding: 25px;
+      list-style-type: none;
+      text-align: right;
+      border-radius: 15px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 18px;
+      color: #333;
+      border: 1px solid rgb(255, 255,255,0.25);
+      box-shadow: 0 4px 15px rgb(0, 0, 0,0.1);
+      font-weight: bold;
+    }
 
+    #product-list li{
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     #product-list:hover{
-        border: 1px solid rgba(39, 37, 37, 0.25);
+      border: 1px solid rgba(39, 37, 37, 0.25);
     }
 
     input{
-        background: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        width: 250px;
-        padding: 15px;
-        border-radius: 15px;
-        font-size: 15px;
-        outline: none;
-        transition: 3s;
-        border: 1px solid rgb(255, 255,255,0.25);
-        box-shadow: 0 4px 15px rgb(0, 0, 0,0.1);
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      width: 100%;
+      padding: 10px;
+      border-radius: 15px;
+      font-size: 15px;
+      outline: none;
+      border: 1px solid rgb(255, 255,255,0.25);
+      box-shadow: 0 4px 15px rgb(0, 0, 0,0.1);
+      box-sizing: border-box;
     }
 
     input:hover{
-        background: rgba(255, 255, 255, 0.25);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        border: 1px solid rgba(39, 37, 37, 0.25);
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(39, 37, 37, 0.25);
     }
 
     button:hover{
-        transform: translateY(-4px);
-        background-color: rgb(255, 255, 255,0.35);
-        border: 1px solid rgba(39, 37, 37, 0.25);
+      transform: translateY(-4px);
+      background-color: rgb(255, 255, 255,0.35);
+      border: 1px solid rgba(39, 37, 37, 0.25);
     }
-    
+
     .CardBox:hover{
-        transform: translateY(-4px);
-        border: 1px solid rgba(39, 37, 37, 0.25);
+      transform: translateY(-4px);
+      border: 1px solid rgba(39, 37, 37, 0.25);
     }
 
+    /* پاپ‌آپ لاگین */
+    #auth-overlay{
+      position: fixed;
+      inset: 0;
+      background: rgba(255,255,255,0.4);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
 
-</style>
+    #auth-box{
+      background: rgba(255,255,255,0.95);
+      border-radius: 15px;
+      padding: 20px 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      min-width: 280px;
+    }
+
+    #auth-box h2{
+      margin-top: 0;
+    }
+
+    #auth-box input{
+      margin: 8px 0;
+      width: 100%;
+    }
+
+    #auth-box button{
+      width: 100%;
+    }
+
+    /* ریسپانسیو برای موبایل */
+    @media (max-width: 600px) {
+      .TopBox{
+        margin: 10px;
+        padding: 10px;
+        justify-content: stretch;
+      }
+
+      .CardBox{
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+
+      h1, p.text{
+        margin-right: 15px;
+        margin-left: 15px;
+      }
+    }
+  </style>
+</head>
 <body>
 
-    <h1>انبارداری میهنی</h1>
-    <p class="text">برای ذخیره محصول ابتدا نام و قیمت آن را وارد نمایید سپس بر روی گزینه ذخیره ضربه بزنید</p>
-
-    <div class="TopBox">
-        <div class="CardBox">
-            <h2>قیمت محصول</h2>
-            <input id="price-input" type="text" placeholder="قیمت کالا"/>
-        </div>
-        <div class="CardBox">
-            <h2>محصول</h2>
-            <input id="name-input" type="text" placeholder="نام کالا"/>
-        </div>
-        <button class="button" id="save-btn">ذخیره</button>
+  <!-- پاپ‌آپ ورود / ثبت‌نام -->
+  <div id="auth-overlay">
+    <div id="auth-box">
+      <h2>ورود به انبارداری</h2>
+      <input id="auth-username" type="text" placeholder="نام کاربری">
+      <input id="auth-password" type="password" placeholder="رمز عبور">
+      <button id="auth-submit">ورود</button>
     </div>
+  </div>
 
-    <ul id="product-list"></ul>
+  <h1>انبارداری میهنی</h1>
+  <p class="text">
+    برای ذخیره محصول ابتدا نام، توضیحات، قیمت و سایر اطلاعات را وارد کنید، سپس روی گزینه ذخیره کلیک نمایید.
+  </p>
 
-    <script>
-        const priceInput = document.getElementById('price-input');
-        const nameInput  = document.getElementById('name-input');
-        const saveBtn    = document.getElementById('save-btn');
-        const list       = document.getElementById('product-list');
+  <div class="TopBox">
+    <div class="CardBox">
+      <h2>نام محصول</h2>
+      <input id="name-input" type="text" placeholder="نام کالا">
+    </div>
+    <div class="CardBox">
+      <h2>توضیحات (اختیاری)</h2>
+      <input id="desc-input" type="text" placeholder="توضیحات کالا (دلخواه)">
+    </div>
+    <div class="CardBox">
+      <h2>قیمت محصول</h2>
+      <input id="price-input" type="number" placeholder="قیمت کالا">
+    </div>
+    <div class="CardBox">
+      <h2>شماره</h2>
+      <input id="code-input" type="number" placeholder="شماره کالا">
+    </div>
+    <div class="CardBox">
+      <h2>تاریخ</h2>
+      <input id="date-input" type="date">
+    </div>
+    <button class="button" id="save-btn">ذخیره</button>
+  </div>
 
-        const products = JSON.parse(localStorage.getItem('products')) || [];
+  <ul id="product-list"></ul>
 
-        renderList();
+  <script>
+    // ----- مدیریت ورود / ثبت‌نام -----
+    const authOverlay   = document.getElementById('auth-overlay');
+    const authUserInput = document.getElementById('auth-username');
+    const authPassInput = document.getElementById('auth-password');
+    const authSubmit    = document.getElementById('auth-submit');
 
-        saveBtn.addEventListener('click', function () {
-            const name  = nameInput.value.trim();
-            const price = priceInput.value.trim();
+    function getCurrentUser() {
+      return localStorage.getItem('currentUser');
+    }
 
-            if (!name || !price) {
-                return;
-            }
+    if (getCurrentUser()) {
+      authOverlay.style.display = 'none';
+    }
 
-            products.push({ name, price });
+    authSubmit.addEventListener('click', function () {
+      const u = authUserInput.value.trim();
+      const p = authPassInput.value.trim();
+      if (!u || !p) return;
 
-            localStorage.setItem('products', JSON.stringify(products));
+      const users = JSON.parse(localStorage.getItem('users') || '{}');
 
-            nameInput.value = '';
-            priceInput.value = '';
-
-            renderList();
-        });
-
-        function renderList() {
-            list.innerHTML = '';
-            products.forEach(p => {
-                const li = document.createElement('li');
-                li.textContent = p.name + ' - ' + p.price;
-                list.appendChild(li);
-            });
+      if (!users[u]) {
+        users[u] = { password: p };
+        localStorage.setItem('users', JSON.stringify(users));
+      } else {
+        if (users[u].password !== p) {
+          alert('رمز عبور اشتباه است');
+          return;
         }
-    </script>
-    <script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('service-worker.js');
-  });
-}
-</script>
+      }
+
+      localStorage.setItem('currentUser', u);
+      authOverlay.style.display = 'none';
+      loadProductsForCurrentUser();
+    });
+  </script>
+
+  <script>
+    // ----- مدیریت محصولات -----
+    const nameInput  = document.getElementById('name-input');
+    const priceInput = document.getElementById('price-input');
+    const descInput  = document.getElementById('desc-input');
+    const codeInput  = document.getElementById('code-input');
+    const dateInput  = document.getElementById('date-input');
+    const saveBtn    = document.getElementById('save-btn');
+    const list       = document.getElementById('product-list');
+
+    let products = [];
+
+    function getStorageKey() {
+      const user = localStorage.getItem('currentUser') || 'guest';
+      return 'products_' + user;
+    }
+
+    function loadProductsForCurrentUser() {
+      const storageKey = getStorageKey();
+      products = JSON.parse(localStorage.getItem(storageKey)) || [];
+      renderList();
+    }
+
+    if (localStorage.getItem('currentUser')) {
+      loadProductsForCurrentUser();
+    }
+
+    saveBtn.addEventListener('click', function () {
+      const name  = nameInput.value.trim();
+      const price = priceInput.value.trim();
+      const desc  = descInput.value.trim();
+      const code  = codeInput.value.trim();
+      const date  = dateInput.value;
+
+      if (!name || !price) {
+        return;
+      }
+
+      products.push({
+        id: Date.now(),
+        name,
+        price,
+        desc,
+        code,
+        date
+      });
+
+      const storageKey = getStorageKey();
+      localStorage.setItem(storageKey, JSON.stringify(products));
+
+      nameInput.value  = '';
+      priceInput.value = '';
+      descInput.value  = '';
+      codeInput.value  = '';
+      dateInput.value  = '';
+
+      renderList();
+    });
+
+    function renderList() {
+      list.innerHTML = '';
+      products.forEach(p => {
+        const li = document.createElement('li');
+
+        const infoSpan = document.createElement('span');
+        let text = p.name + ' - ' + p.price;
+        if (p.desc) text += ' | ' + p.desc;
+        if (p.code) text += ' | شماره: ' + p.code;
+        if (p.date) text += ' | تاریخ: ' + p.date;
+        infoSpan.textContent = text;
+
+        const delBtn = document.createElement('button');
+        delBtn.textContent = 'حذف';
+        delBtn.onclick = function () {
+          const index = products.findIndex(x => x.id === p.id);
+          if (index > -1) {
+            products.splice(index, 1);
+            const storageKey = getStorageKey();
+            localStorage.setItem(storageKey, JSON.stringify(products));
+            renderList();
+          }
+        };
+
+        li.appendChild(infoSpan);
+        li.appendChild(delBtn);
+        list.appendChild(li);
+      });
+    }
+  </script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js');
+      });
+    }
+  </script>
 </body>
 </html>
-
-
-
-
-
